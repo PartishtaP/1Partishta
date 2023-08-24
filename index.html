@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Marksheet</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="back">
+        <div class="header">
+            <img src="logo.png" alt="Bharati logo" width="250px"><br>
+            <a href="https://bvcoenm.edu.in/"><h1>Bharati Vidyapeeth College of Engineering</h1></a>
+            <h5>Address: Sector 7, CBD Belapur, Navi Mumbai, Maharashtra 400614</h5>
+            <h5>Contact no.:022 2757 2140 </h5>
+            <div class="hr1"></div>
+        </div>
+        <div class="btnDes">
+            <h2 class="header">Semester V</h2>
+            <h2 class="header">Menu List:</h2>
+            <button class="btn" onclick="createProfile()">Create Profile</button>
+            <button class="btn" onclick="createMarkForm()">Enter Marks</button>
+        </div>
+    <div id="createP">
+        <div class="create">
+            <div class="close">
+                <button onclick="closeCreateProfile()" style="background-color:coral;border:none;">
+                    <img src="close.png" alt="close" width="50x">
+                </button>
+            </div>            
+            <form >
+               
+                  <div class="mb-3 row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Seat No.</label>
+                    <div class="col-sm-10">
+                      <input type="text"  value="" class="form-control" id="inSeat">
+                    </div>
+                  </div>
+                  <div class="mb-3 row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-10">
+                      <input type="text" value="" class="form-control" id="inName">
+                    </div>
+                  </div>
+                  <div class="mb-3 row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Branch</label>
+                    <div class="col-sm-10">
+                      <input type="text" value="" class="form-control" id="inBranch">
+                    </div>
+                  </div>
+                  <div class="mb-3 row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Year</label>
+                    <div class="col-sm-10">
+                      <input type="text" value="" class="form-control" id="inYear">
+                    </div>
+                  </div>
+                  <button class="btn" onclick="return handleSubmit()">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div id="entrMarks">
+         
+        <div class="mark"  style="background-color:rgb(42, 42, 42);border:none;" align="center" >          
+           <form action="">
+            <table cellspacin="1">
+                <div class="close">
+                    <button onclick="closeMarkForm()" style="background-color:rgb(42, 42, 42);border:none;">
+                        <img src="close.png" alt="close" width="50x">
+                    </button>
+                </div> 
+                <tr style="text-align: center;">
+                 <td>COURSE CODE</td>
+                 <td>COURSE TITLE</td>
+                 <td>UT1</td>
+                 <td>UT2</td>
+                 
+                </tr>
+     
+                <tr>
+                 <td>ITC501</td>
+                 <td>Internet Programming</td>
+                 <td><input id="ip1" type="number" name="ut1" onchange="handleChange(this)" > </td>
+                 <td><input id="ip2" type="number" name="ut2"> </td>
+                 
+                </tr>
+     
+                <tr>
+                 <td>ITDO5014</td>
+                 <td>ADSA</td>
+                 <td><input id="adsau1" type="number" name="ut1"> </td>
+                 <td><input id="adsau2" type="number" name="ut2"> </td>
+                 
+                </tr>
+                <tr>
+                 <td>ITC504</td>
+                 <td>Software Engineering</td>
+                 <td><input id="seu1" type="number" name="ut1"> </td>
+                 <td><input id="seu2" type="number" name="ut2"> </td>
+                 
+                </tr>
+                <tr>
+                 <td>ITL505</td>
+                 <td>PCE-II</td>
+                 <td><input id="pceu1" type="number" name="ut1"> </td>
+                 <td><input id="pceu2" type="number" name="ut2"> </td>
+               
+                </tr>
+                <tr>
+                 <td>ITC502</td>
+                 <td>Computer Network Security</td>
+                 <td><input id="cnsu1" type="number" name="ut1"> </td>
+                 <td><input id="cnsu2" type="number" name="ut2"> </td>
+                
+                </tr>
+                <tr>
+                  <td>ITC504</td>
+                  <td>EEB</td>
+                  <td><input id="eebu1" type="number" name="ut1"> </td>
+                  <td><input id="eebu2" type="number" name="ut2"> </td>
+                 
+                 </tr>
+     
+                
+             </table>
+             <button class="btn" onclick="return calculate()">Submit</button>
+           </form>
+        </div>
+    </div>
+    <div id="generate">
+        <div class="info">
+            <h3 class="alignI">Personal Information</h3><br>
+            <div class="alignI"><h5 class="alignL">Name </h5><h5 id="name">: </h5></div>
+            <div class="alignI"><h5 class="alignL">Seat Number </h5><h5 id="seat">: </h5></div>
+            <div class="alignI"><h5 class="alignL">Branch </h5><h5 id="branch">: </h5></div>
+        
+            <div class="alignI"><h5 class="alignL">Year </h5><h5 id="year">: </h5></div>
+        </div><br>
+        <h3 class="alignI">Marksheet</h3><br>
+        <div class="marksheet">
+            <table cellspacin="1">
+                <tr style="text-align: center;">
+                 <td>COURSE CODE</td>
+                 <td>COURSE TITLE</td>
+                 <td>UT1</td>
+                 <td>UT2</td>
+                 <td>&nbsp; AVG &nbsp; </td>
+                 
+                 <td>TOTAL  </td>
+                </tr>
+     
+                <tr>
+                 <td>ITC501</td>
+                 <td>Internet Programming</td>
+                 <td id="ut1ip"></td>
+                 <td id="ut2ip"></td>
+                 <td id="ipavg"></td>
+                 
+                 <td id="iptotal"></td>
+                </tr>
+     
+                <tr>
+                  <td>ITDO5014</td>
+                  <td>ADSA</td>
+                 <td id="ut1adsa"></td>
+                 <td id="ut2adsa"></td>
+                 <td id="adsaavg"></td>
+                 
+                 <td id="adsatotal"></td>
+                </tr>
+                <tr>
+                 <td>ITC504</td>
+                 <td>Software Engineering</td>
+                 <td id="ut1se"></td>
+                 <td id="ut2se"></td>
+                 <td id="seavg"></td>
+                 
+                 <td id="setotal"></td>
+                </tr>
+                <tr>
+                 <td>ITC505</td>
+                 <td>PCE-II</td>
+                 <td id="ut1pce"></td>
+                 <td id="ut2pce"></td>
+                 <td id="atpce"></td>
+                
+                 <td id="pcetotal"></td>
+                </tr>
+                <tr>
+                 <td>ITC502</td>
+                 <td>Computer Network Security </td>
+                 <td id="ut1cns"></td>
+                 <td id="ut2cns"></td>
+                 <td id="cnsavg"></td>
+                 
+                 <td id="cnstotal"></td>
+                </tr>
+                <tr>
+                  <td>ITC503</td>
+                  <td>EEB </td>
+                  <td id="ut1eeb"></td>
+                  <td id="ut2eeb"></td>
+                  <td id="eebavg"></td>
+                  
+                  <td id="eebtotal"></td>
+                 </tr>
+                </tr>
+     
+                <tr>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td >TOTAL</td>
+                 <td id="total"></td>
+                </tr>
+                
+             </table>
+        </div>
+    </div>
+</div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>
